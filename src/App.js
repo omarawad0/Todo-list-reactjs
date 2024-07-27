@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Navbar from './components/Navbar/Navbar';
+import LocalTodoPage from './pages/LocalTodoPage';
+import ServerTodoPage from './pages/ServerTodoPage';
+import FormPage from './pages/FormPage';
+import OptimizedComponentPage from './pages/OptimizedComponentPage';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Navbar/>
+     <Routes>
+      <Route  path="/" element={<LocalTodoPage/>} />
+      <Route  path="/serverTdo" element={<ServerTodoPage/>} />
+      <Route  path="/form" element={<FormPage/>} />
+      <Route  path="/optimizedComponent" element={<OptimizedComponentPage/>} />
+     </Routes>
     </div>
   );
 }
