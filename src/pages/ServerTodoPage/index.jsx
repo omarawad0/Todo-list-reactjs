@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import { PageContainer } from "../../components/PageContainer/PageContainer.styled";
 
 const ServerTodoPage = () => {
-  return (
-    <div>ServerTodoPage</div>
-  )
-}
+  return <PageContainer>ServerTodoPage</PageContainer>;
+};
 
-export default ServerTodoPage
+export default ServerTodoPage;
