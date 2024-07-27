@@ -32,7 +32,7 @@ export const NavLinks = styled.div`
         }
     }
     @media (max-width: ${MAX_WIDTH}) {
-        display: ${props => props.isExpanded ? 'flex' : 'none'};
+        display: ${props => props.$isExpanded ? 'flex' : 'none'};
         }
 `;
 
