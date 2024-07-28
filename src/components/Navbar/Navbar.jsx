@@ -31,7 +31,6 @@ const Navbar = () => {
       </HamburgerMenu>
       <NavLinks $isExpanded={isExpanded}>
         <NavLink to="/">Local ToDoList</NavLink>
-        <NavLink to="/serverTdo">Server toDoList</NavLink>
         <NavLink to="/form">Form</NavLink>
         <NavLink to="/optimizedComponent">Optimized Component</NavLink>
       </NavLinks>

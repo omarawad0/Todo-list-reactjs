@@ -4,7 +4,7 @@ import styles from "./InputField.module.css";
 const InputField = ({ value, onChange, type, label, placeholder }) => {
   return (
     <div className={styles.formControl}>
-      <label for={label}>{label}</label>
+      <label htmlFor={label}>{label}</label>
       <input
         type={type}
         placeholder={placeholder}
