@@ -6,6 +6,8 @@ import {
   setItemToLocalStorage,
 } from "../../utils/LocalStorage";
 import { config } from "../../config/appConfig";
+import FilterButtons from "./FilterButtons";
+import AsyncTodos from "./AsyncTodos";
 
 const Todo = () => {
   const [toDos, setToDos] = useState(
@@ -50,44 +52,29 @@ const Todo = () => {
     <div className={styles.todoWrapper}>
       <h1>To Do List</h1>
       <AddTodoForm addTodo={setNewTodo} />
-      <div className={styles.filterButtons}>
-        <button
-          className={filter === "all" ? styles.selected : ""}
-          onClick={() => setFilter("all")}
-        >
-          All
-        </button>
-        <button
-          className={filter === "completed" ? styles.selected : ""}
-          onClick={() => setFilter("completed")}
-        >
-          Completed
-        </button>
-        <button
-          className={filter === "incomplete" ? styles.selected : ""}
-          onClick={() => setFilter("incomplete")}
-        >
-          Incomplete
-        </button>
-      </div>
-      <ul>
-        {withFilter(toDos).map((toDo) => (
-          <li key={toDo.id}>
-            <div className={styles.todoItem}>
-              <input
-                type="checkbox"
-                checked={toDo.completed}
-                onChange={() => toggleTodo(toDo.id)}
-              />
-              <div>
-                <p>{toDo.title}</p>
-                <p>{toDo.description}</p>
+      <FilterButtons filter={filter} setFilter={setFilter} />
+      <div>
+        <h3>Local Todos</h3>
+        <ul>
+          {withFilter(toDos).map((toDo) => (
+            <li key={toDo.id}>
+              <div className={styles.todoItem}>
+                <input
+                  type="checkbox"
+                  checked={toDo.completed}
+                  onChange={() => toggleTodo(toDo.id)}
+                />
+                <div>
+                  <p>{toDo.title}</p>
+                  <p>{toDo?.description || ""}</p>
+                </div>
               </div>
-            </div>
-            <button onClick={() => deleteTodo(toDo.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+              <button onClick={() => deleteTodo(toDo.id)}>Delete</button>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <AsyncTodos />
     </div>
   );
 };
