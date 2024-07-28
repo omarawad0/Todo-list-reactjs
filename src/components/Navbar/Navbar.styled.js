@@ -1,6 +1,5 @@
 import styled from "styled-components";
-
-const MAX_WIDTH = "768px";
+import { config } from "../../config/appConfig";
 
 export const NavbarContainer = styled.div`
   display: flex;
@@ -11,7 +10,7 @@ export const NavbarContainer = styled.div`
   min-height: 60px;
   background-color: #333;
   color: #fff;
-  @media (max-width: ${MAX_WIDTH}) {
+  @media (${config.MediaQueryList.md}) {
     flex-direction: column;
     padding: 20px;
     gap: 10px;
@@ -31,7 +30,7 @@ export const NavLinks = styled.div`
       text-decoration: underline;
     }
   }
-  @media (max-width: ${MAX_WIDTH}) {
+  @media (${config.MediaQueryList.md}) {
     display: ${(props) => (props.$isExpanded ? "flex" : "none")};
   }
 `;
@@ -39,7 +38,7 @@ export const NavLinks = styled.div`
 export const HamburgerMenu = styled.div`
   display: none;
 
-  @media (max-width: ${MAX_WIDTH}) {
+  @media (${config.MediaQueryList.md}) {
     display: block;
     cursor: pointer;
   }
