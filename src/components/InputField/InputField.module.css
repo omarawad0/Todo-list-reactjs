@@ -1,0 +1,24 @@
+.formControl {
+  position: relative;
+  width: 100%;
+}
+
+.formControl label {
+  color: #777;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.formControl input {
+  border: 3px solid #f0f0f0;
+  border-radius: 4px;
+  padding: 10px;
+  display: block;
+  font-size: 16px;
+  width: 100%;
+}
+
+.formControl input:focus {
+  outline: 0;
+  border-color: #777;
+}

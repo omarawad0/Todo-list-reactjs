@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import { PageContainer } from "../../components/PageContainer/PageContainer.styled";
 
 const FormPage = () => {
-  return (
-    <div>FormPage</div>
-  )
-}
+  return <PageContainer>FormPage</PageContainer>;
+};
 
-export default FormPage
+export default FormPage;

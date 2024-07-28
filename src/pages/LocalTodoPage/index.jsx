@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import { PageContainer } from "../../components/PageContainer/PageContainer.styled";
+import Todo from "../../components/Todo";
 
- const LocalTodoPage = () => {
+const LocalTodoPage = () => {
   return (
-    <div>LocalTodoPage</div>
-  )
-}
+    <PageContainer>
+      <Todo />
+    </PageContainer>
+  );
+};
 
-export default LocalTodoPage
+export default LocalTodoPage;
