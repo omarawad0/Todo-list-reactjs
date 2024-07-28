@@ -7,4 +7,5 @@ export const config = {
     xl: "(max-width: 1280px)",
     xxl: "(max-width: 1536px)",
   },
+  URL: "https://jsonplaceholder.typicode.com/todos",
 };
