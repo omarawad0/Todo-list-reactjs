@@ -1,4 +1,10 @@
+:root {
+  --error-color: #e74c3c;
+}
+
 .formControl {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
   position: relative;
   width: 100%;
 }
@@ -16,6 +22,14 @@
   display: block;
   font-size: 16px;
   width: 100%;
+}
+
+.formControl input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.formControl .error {
+  color: var(--error-color);
 }
 
 .formControl input:focus {
