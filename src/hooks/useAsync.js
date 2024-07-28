@@ -11,7 +11,7 @@ function useAsync(initialState) {
   const setData = (data) => setState({ data, status: "resolved" });
   const setError = (error) => setState({ error, status: "rejected" });
 
-  const run = (promise) => {
+  const run = React.useCallback((promise) => {
     if (!promise || !promise.then) {
       throw new Error(
         `The argument passed to useAsync().run must be a promise. You passed: ${promise}`
@@ -28,10 +28,9 @@ function useAsync(initialState) {
         return Promise.reject(error);
       }
     );
-  };
+  }, []);
 
   return {
-    // using the same names that react-query uses for convenience
     isIdle: status === "idle",
     isLoading: status === "pending",
     isError: status === "rejected",
