@@ -22,15 +22,23 @@ const QueryList = ({ getRecordsLimit }) => {
 };
 
 const OptimizedComponent = () => {
+  const [isOptimized, setIsOptimized] = useState([]);
   const [recordsLimit, setRecordsLimit] = useState(10);
   const [counter, setCounter] = useState(0);
+
+  const toggleIsOptimized = () => {
+    setIsOptimized(!isOptimized);
+  };
 
   const setRandomLimit = () => {
     setRecordsLimit(Math.floor(Math.random() * 100));
   };
 
+  const getRecordsLimit = () => {
+    return recordsLimit;
+  };
   // Use useCallback to prevent unnecessary re-renders when the counter is clicked
-  const getRecordsLimit = useCallback(() => {
+  const optimizedGetRecordsLimit = useCallback(() => {
     return recordsLimit;
   }, [recordsLimit]);
 
@@ -40,10 +48,25 @@ const OptimizedComponent = () => {
 
   return (
     <div>
+      <div style={{ marginBottom: "20px" }}>
+        <label>
+          <input
+            type="checkbox"
+            name="isOptimized"
+            checked={isOptimized}
+            onChange={toggleIsOptimized}
+          />
+          Is Component Optimized
+        </label>
+      </div>
       <button onClick={setRandomLimit}>Set Random Query Limit</button>
       <button onClick={incrementCounter}>Increment Counter</button>
       <h4>Counter: {counter}</h4>
-      <QueryList getRecordsLimit={getRecordsLimit} />
+      <QueryList
+        getRecordsLimit={
+          isOptimized ? optimizedGetRecordsLimit : getRecordsLimit
+        }
+      />
     </div>
   );
 };
