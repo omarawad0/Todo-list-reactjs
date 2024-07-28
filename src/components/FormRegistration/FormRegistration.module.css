@@ -1,0 +1,21 @@
+:root {
+  --error-color: #e74c3c;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px #0000001a;
+  width: 500px;
+  @media screen and (max-width: 768px) {
+    width: 300px;
+  }
+}
+
+.form {
+  padding: 30px 55px 30px 40px;
+}
+
+.error {
+  color: var(--error-color);
+}

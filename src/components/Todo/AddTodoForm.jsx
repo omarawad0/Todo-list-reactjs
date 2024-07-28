@@ -10,14 +10,14 @@ const AddTodoForm = ({ addTodo }) => {
     <div className={styles.formControlWrapper}>
       <InputField
         value={todoTitle}
-        onChange={setTodoTitle}
+        onChange={(e) => setTodoTitle(e.target.value)}
         type="text"
         label="Title"
         placeholder="Enter title"
       />
       <InputField
         value={todoDescription}
-        onChange={setTodoDescription}
+        onChange={(e) => setTodoDescription(e.target.value)}
         type="text"
         label="Description"
         placeholder="Enter Description"
