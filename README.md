@@ -30,6 +30,17 @@ This repository contains a React application that includes a dynamic todo list, 
      - Terms checkbox is checked before submission.
    - Controlled components to manage form inputs.
    - Display error messages if validation fails.
+  
+5. **Optimize React Component Rendering**
+   - Optimize a React component with performance issues. The component includes expensive renders and async calls. Use React.memo, useMemo, and useCallback to improve performance.
+   - reduce component renders and prevent the useEffect from fetching data every time the component rerenders.
+   - Add the ability to toggle between the optimized and non-optimized versions.
+   - On this test, the rendering reduced by 2ms.
+   - Before, ![Screenshot 2024-07-29 at 3 01 11 AM](https://github.com/user-attachments/assets/dc3d4828-8ffc-4f6f-94ff-5fc9d44d9979).
+   - After, ![Screenshot 2024-07-29 at 3 00 56 AM](https://github.com/user-attachments/assets/1ee79265-0a38-4e51-a547-f50b06fefc44)
+
+
+         
 
 ## Installation
 
